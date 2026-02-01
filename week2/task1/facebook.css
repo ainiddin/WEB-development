@@ -1,0 +1,73 @@
+body{
+    font-family: 'Segoe UI';
+    background-color:rgb(230, 231, 232);
+}
+.inscription{
+    color:rgb(24, 119, 249);
+    font-size:2rem;
+    margin-left:259px;
+    margin-top: 177px;
+}
+.text{
+    color:black;
+    font-size: 26px;
+    width: 450px;
+    margin-left:259px;
+    margin-top: -40px;
+}
+.login-button{
+    background-color:rgb(11, 110, 249);
+    color:white;
+    border-radius: 5px;
+    border:None;
+    padding:5px;
+    font-size:25px;
+    width: 377px;
+    height:49px;
+    cursor:pointer;
+}
+.login-form:hover{
+    background-color:rgb(24, 119, 249);
+}
+.sign-up{
+    background-color:rgb(4, 186, 10);
+    border-radius:5px;
+    color:white;
+    font-size:17px;
+    border:none;
+    height:49px;
+    width:250px;
+    cursor:pointer;
+    margin-left:61px;
+}
+.input-text{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+.input-text input{
+    border:1px solid rgba(125, 123, 123,0.25);
+    height:49px;
+    width:364px;
+    font-size:17px;
+    border-radius:5px;
+    padding-left:10px;
+}
+.forgot-password{
+    margin-left:130px;
+}
+.for-famous{
+    color:balck;
+    margin-left:840px;
+    width:396px;
+    font-size:15px;
+}
+.input-sec{
+    padding:20px;
+    background-color:white;
+    border-radius:6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    width:396px;
+    margin-left:840px;
+    margin-top:-250px;
+}
