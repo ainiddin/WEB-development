@@ -1,7 +1,3 @@
-/**
- * ToDo List Controller
- * Follows Airbnb Style Guide (ES6+, const/let, arrow functions)
- */
 
 const todoForm = document.querySelector('#todo-form');
 const todoInput = document.querySelector('#todo-input');
