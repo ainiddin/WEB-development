@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component ,signal,OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { input, output } from '@angular/core';
 import { Product } from '../models/product.model';
+import {StarRating} from '../star-rating/star-rating';
 
 @Component({
   selector: 'app-product-item-component',
-  imports: [CommonModule],
+  standalone: true,
+  imports: [CommonModule,StarRating],
   templateUrl: './product-item-component.html',
   styleUrl: './product-item-component.css',
 })
@@ -14,6 +16,15 @@ export class ProductItemComponent {
   like = output<number>();
   delete = output<number>();
 
+  currentRating=signal(0);
+
+  ngOnInit(){
+    this.currentRating.set(this.product().rating)
+  }
+
+  onRatingChange(newRating: number):void{
+    this.currentRating.set(newRating)
+  }
   onLikeClick (): void {
     this.like.emit (this.product().id);
   }
@@ -22,14 +33,14 @@ export class ProductItemComponent {
     this.delete.emit (this.product().id);
   }
 
-  
+
   shareOnWhatsaApp (link: string){
     const message = 'Check out this product: ' + link;
 
     const encodeMessage = encodeURIComponent(message);
 
     const url  = 'https://wa.me/?text='+ encodeMessage;
-    
+
     window.open(url, '_blank');
   }
 
@@ -43,7 +54,7 @@ export class ProductItemComponent {
     window.open (url, '_blank')
   }
 
-  
+
   getAllImages (p: Product): string[] {
     return [p.image, ...p.images];
   }
@@ -67,7 +78,7 @@ export class ProductItemComponent {
   nextImage (productId: number, total: number): void{
     const current = this.getIndex(productId);
     const next = (current + 1)% total;
-    this.setIndex(productId,next); 
+    this.setIndex(productId,next);
   }
 
 }

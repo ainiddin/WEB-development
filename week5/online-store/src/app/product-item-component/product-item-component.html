@@ -15,17 +15,19 @@
             <h2 class="name">{{product().name}}</h2>
             <p class="desc">{{product().description}}</p>
             <p class="price"><b>{{product().price | number}} ₸</b></p>
-            <p class="rating">Rating: <b>{{product().rating}}</b> ⭐</p>
+            <div class="rating-section" style="display:flex; align-items:center; gap:10px;margin-bottom: 10px;">
+              <app-star-rating
+                [rating]="currentRating()"
+                [readonly]="false";
+                (ratingChange)="onRatingChange($event)">
+              </app-star-rating>
+              <span class="rating-val"><b>{{currentRating()}}/5</b>⭐</span>
+            </div>
             <a class="link" [href]="product().link" target="_blank"> Open on Kaspi</a>
 
             <button (click)="onLikeClick()" class="like">❤️ {{product().likes}}</button>
             <button (click)="shareOnWhatsaApp(product().link)" class="what"> Share on WhatsApp</button>
             <button (click)="shareOnTelegram(product().link, product().name)" class="tele">Share on Telegram</button>
             <button (click)="onDeleteClick()" class="delete">Delete</button>
-
-
         </div>
-
-
-
 
