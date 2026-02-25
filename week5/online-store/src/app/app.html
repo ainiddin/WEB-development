@@ -1,0 +1,14 @@
+<h1 style="margin-top: 50px; margin-left:50px;">Online Store</h1>
+
+<div class="categories">
+    @for (c of categories; track c.id){
+        <button (click)="selectCategory(c.id)"  [class.active]="selectedCategoryId === c.id">{{c.name}}</button>
+    }
+</div>
+
+@if (selectedCategoryId === null){
+    <h1 style="margin-left: 40%">Please select a category</h1>
+}@else{
+    <app-product-list-component [products]="filteredProducts()" (like)="handleLike($event)" (delete)="handleDelete($event)"></app-product-list-component>
+}
+

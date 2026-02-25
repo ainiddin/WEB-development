@@ -1,0 +1,25 @@
+.categories{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+    margin-left:550px;
+}
+.categories button.active{
+ background: rgba(66, 60, 250, 0.71);
+ color: rgb(3, 2, 11);
+}
+button {
+    cursor: pointer;
+    border-radius: 15px;
+    border: 2px solid rgba(4, 41, 188, 0.49);
+    margin-left: 1px;
+    padding: 10px;
+    font-size: 20px;
+    background: rgba(183, 208, 255, 0.86);
+}
+button:hover{
+    background: rgba(60, 114, 250, 0.71);
+    transform: translateY(-5px);
+    transition: 0.5s;
+}
