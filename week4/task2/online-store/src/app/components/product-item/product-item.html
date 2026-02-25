@@ -1,0 +1,36 @@
+<div class="product-card">
+  <div class="image-gallery">
+    <a [href]="product.link" target="_blank">
+      <img [src]="currentImage" [alt]="product.name" class="product-image">
+    </a>
+
+    <div class="thumbnail-container">
+      @for (img of product.images; track $index) {
+        <img
+          [src]="img"
+          (click)="changeImage($index)"
+          [class.active]="$index === currentImageIndex"
+          class="thumbnail-img">
+      }
+    </div>
+  </div>
+
+  <div class="product-content">
+    <a [href]="product.link" target="_blank" class="product-link">
+      <h2 class="product-name">{{ product.name }}</h2>
+    </a>
+
+    <p class="product-desc">{{ product.description }}</p>
+
+    <div class="product-info">
+      <span class="price">{{ product.price }} ₸</span>
+      <span class="rating">⭐ {{ product.rating }}</span>
+    </div>
+
+    <div class="action-buttons">
+      <a [href]="product.link" target="_blank" class="btn-buy">КУПИТЬ</a>
+
+      <button (click)="share()" class="btn-whatsapp">WhatsApp</button>
+    </div>
+  </div>
+</div>

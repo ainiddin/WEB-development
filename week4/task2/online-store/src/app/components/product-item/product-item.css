@@ -1,0 +1,111 @@
+.product-card {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+}
+.product-image{
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+.price{
+  font-weight: bold;
+  color: red;
+  font-size:1.2rem;
+}
+.btn-whatsapp{
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+.thumbnail-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.thumbnail-img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: 0.2s;
+}
+
+.thumbnail-img:hover {
+  border-color: #007bff;
+}
+
+.thumbnail-img.active {
+  border: 2px solid #e21a1a; /* Подсветка активного фото */
+}
+
+.product-image {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+}
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Стили для ссылки-названия, чтобы она не выглядела как обычная синяя ссылка */
+.product-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.product-link:hover .product-name {
+  color: #e21a1a; /* Краснеет при наведении */
+}
+
+/* Кнопка КУПИТЬ */
+.btn-buy {
+  height:30px;
+  display: block;
+  background-color: red; /* Синий цвет */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+.btn-buy:hover {
+  background-color: rgb(213, 18, 18);
+}
+
+/* Кнопка WhatsApp (изменил для контраста) */
+.btn-whatsapp {
+  height: 50px;
+  background-color: #25D366;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-whatsapp:hover {
+  background-color: rgb(45, 142, 23);
+}
