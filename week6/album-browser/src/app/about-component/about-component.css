@@ -1,0 +1,17 @@
+.about-card {
+  max-width: 500px;
+  border: 1px solid #ced4da;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.about-card p {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+strong {
+  color: #495057;
+}

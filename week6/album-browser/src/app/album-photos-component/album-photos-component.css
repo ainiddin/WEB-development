@@ -1,0 +1,54 @@
+.photos-container {
+  padding: 20px;
+}
+
+.back-btn {
+  background-color: #34495e;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* Адаптивная сетка */
+.photo-grid {
+  display: grid;
+  /* Колонки будут подстраиваться автоматически под ширину экрана */
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.photo-card {
+  border: 1px solid #f1f2f6;
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+}
+
+.photo-card:hover {
+  transform: translateY(-5px);
+}
+
+.photo-card img {
+  width: 100%;
+  display: block;
+}
+
+.photo-info {
+  padding: 10px;
+  text-align: center;
+}
+
+.photo-info p {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin: 0;
+  /* Обрезка текста, если название слишком длинное */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
