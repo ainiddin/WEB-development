@@ -1,0 +1,14 @@
+<a routerLink="/posts" class = "btn-back">← Back to Posts</a> @if (isLoading()) {
+  <p>Loading...</p>
+} @else if (post()) {
+  <h1>{{ post()?.title }}</h1>
+  <p>{{ post()?.body }}</p>
+
+  <hr>
+  <h3>Comments ({{ comments().length }})</h3> @for (comment of comments(); track comment.id) {
+    <div class="comment-card">
+      <strong>{{ comment.name }}</strong>
+      <p class="email">{{ comment.email }}</p> <p>{{ comment.body }}</p>
+    </div>
+  }
+}

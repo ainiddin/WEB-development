@@ -1,0 +1,13 @@
+.post-item{
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.post-item:hover{
+  background-color: lightgray;
+}
