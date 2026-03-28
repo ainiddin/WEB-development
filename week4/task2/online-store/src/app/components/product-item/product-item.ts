@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, output, signal, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../../models/product.model';
 
@@ -10,19 +10,51 @@ import { Product } from '../../models/product.model';
   styleUrl: './product-item.css'
 })
 export class ProductItem {
-  @Input() product!: Product;
-  currentImageIndex = 0;
+  product = input.required<Product>();
+  like = output<number>();
+  delete = output<number>();
 
-  get currentImage(): string {
-    return this.product.images[this.currentImageIndex];
+  currentRating = signal(0);
+
+  ngOnInit() {
+    this.currentRating.set(this.product().rating);
   }
 
-  changeImage(index: number) {
-    this.currentImageIndex = index;
+  onRatingChange(newRating : number) {
+    this.currentRating.set(newRating);
+  }
+  onLikeClick(){
+    this.like.emit(this.product().id);
+  }
+  onDeleteClick(){
+    this.delete.emit(this.product().id);
   }
 
-  share() {
-    const whatsappUrl = `https://wa.me/?text=${encodeURIComponent('Купи мне это: ' + this.product.link)}`;
-    window.open(whatsappUrl, '_blank');
+  shareOnWhatsApp(link: string){
+    const encodeMessage = encodeURIComponent('Check out this product' + link);
+    const url = 'https://web.whatsapp.com/' + encodeMessage;
+    window.open(url);//if write window.open(url,'_blank'); то откроется новая вкладка, а без него ссылка откроется как захочет браузер
+  }
+
+  shareOnTelegram(link: string){
+    const encodeMessage = encodeURIComponent('Check out this product' + link);
+    const url = 'https://web.telegram.org/' + encodeMessage;
+    window.open(url);
+  }
+  getAllImages (p: Product): string[] {
+    return [...p.images];
+  }
+  selectedImageIndex: Record<number, number> = {};
+
+  getIndex(productId: number): number {
+    return this.selectedImageIndex[productId] ?? 0;
+  }
+
+  setIndex(productId: number, index: number): void {
+    this.selectedImageIndex[productId] = index;
+  }
+
+  protected openLink(link: string) {
+    window.open(link);
   }
 }

@@ -1,16 +1,25 @@
-.product-grid {
+.title{
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: Verdana, Geneva, sans-serif;
+}
+.grid{
+  font-family: Arial, sans-serif;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
-  padding: 20px;
+  gap: 70px;
+  grid-template-columns: repeat(3,420px);
+  padding: 60px;
 }
-@media (max-width: 900px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.card{
+  border: 2px solid #6e6e6ee2;
+  border-radius: 12px;
+  padding: 12px;
+  background: white;
+  transition: 0.6s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.187);
 }
-@media (max-width: 600px) {
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
+.card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1), 0 0 15px rgba(55, 13, 13, 0.42);
 }

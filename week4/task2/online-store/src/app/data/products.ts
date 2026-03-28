@@ -1,7 +1,7 @@
-import { Product } from "../models/product.model";
+import { Product } from '../models/product.model';
 
 export const ProductsData: Product[] = [
-    {
+  {
     id: 1,
     name: 'Мышь AULA SC580',
     description: 'Смело кликай и играй в CS2',

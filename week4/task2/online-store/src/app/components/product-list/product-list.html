@@ -1,5 +1,11 @@
-<div class="product-grid">
-  @for (item of products;track item.id){
-    <app-product-item [product]="item"></app-product-item>
-  }
-</div>
+<h1 class = "title"> Products</h1>
+
+@if (products().length === 0){
+  <p style="color:darkred;text-align: center; font-size: 45px; font-weight: bold;font-family: Verdana, Geneva, sans-serif">No products in this category</p>
+}@else {
+  <div class="grid">
+    @for (p of products(); track p.id){
+      <app-product-item class="card" [product]="p" (like)="onLike($event)" (delete)="onDelete($event)"></app-product-item>
+    }
+  </div>
+}

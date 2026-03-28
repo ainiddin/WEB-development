@@ -1,4 +1,5 @@
 .categories{
+    align-items: center;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
@@ -12,7 +13,7 @@
 button {
     cursor: pointer;
     border-radius: 15px;
-    border: 2px solid rgba(4, 41, 188, 0.49);
+    border: 2px solid rgba(10, 19, 55, 0.49);
     margin-left: 1px;
     padding: 10px;
     font-size: 20px;

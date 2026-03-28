@@ -1,7 +1,6 @@
 import { Component, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from '../models/product.model';
-import { ProductsData } from '../data/products';
 import { ProductItemComponent } from '../product-item-component/product-item-component';
 
 @Component({

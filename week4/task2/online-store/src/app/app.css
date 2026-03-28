@@ -1,0 +1,36 @@
+
+.nna{
+  text-align: center;
+  margin-top: 40px;
+  font-weight: bold;
+  font-size: 40px;
+  font-family: Verdana, Geneva, sans-serif;
+  text-shadow: 0 12px 24px rgba(0, 0, 0, 0.1), 0 0 15px rgba(55, 50, 50, 0.42);
+
+}
+.categories{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.categories button.active{
+  background: #e60000;
+  color: white;
+}
+button {
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 15px;
+  border: None;
+  padding: 15px 40px;
+  font-weight: bold;
+  font-size: 20px;
+  background: #ffb700;
+  transition: 0.3s;
+}
+button:hover{
+  background: #e60000;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 0 #990000;
+}
